@@ -2124,8 +2124,6 @@ Hash: yhNVwU6Q, Date: 10/07/2025, Unit system: M_KG_S_C
 2115, 2.50000000E-003, -5.00000000E-003, 1.98447719E-020
 2116, 2.50000000E-003, -2.27004830E-018, 9.63197466E-020
 2117, 2.50000000E-003, 5.00000000E-003, 3.51881687E-019
-2118, 2.00000000E-001, 0.00000000E+000, 0.00000000E+000
-2119, 2.00000000E-001, 0.00000000E+000, 0.00000000E+000
 **
 ** Elements ++++++++++++++++++++++++++++++++++++++++++++++++
 **
@@ -2777,22 +2775,6 @@ Hash: yhNVwU6Q, Date: 10/07/2025, Unit system: M_KG_S_C
 1, 2, 5, 7, 9, 10, 11, 12, 13, 14, 15, 181, 182, 183, 266, 267, 
 268, 269, 270, 271, 272, 359, 360, 361, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 
 1486, 1487, 1488, 1489, 1490
-*Nset, Nset=Internal_Selection-1_Rigid_Body-1
-3, 4, 6, 8, 95, 96, 97, 98, 99, 100, 101, 263, 264, 265, 352, 353, 
-354, 355, 356, 357, 358, 362, 363, 364, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 
-1473, 1474, 1475, 1476, 1477
-*Nset, Nset=Internal_Selection-1_Fixed-1
-1, 2, 5, 7, 9, 10, 11, 12, 13, 14, 15, 181, 182, 183, 266, 267, 
-268, 269, 270, 271, 272, 359, 360, 361, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 
-1486, 1487, 1488, 1489, 1490
-**
-** Additional node sets ++++++++++++++++++++++++++++++++++++
-**
-*Nset, Nset=Reference_Point-1_Ref_21171
-2118
-*Nset, Nset=Reference_Point-1_Rot_21172
-2119
-
 **
 ** Element sets ++++++++++++++++++++++++++++++++++++++++++++
 **
@@ -2831,7 +2813,6 @@ Solid_part-1
 **
 ** Constraints +++++++++++++++++++++++++++++++++++++++++++++
 **
-*Rigid body, Nset=Internal_Selection-1_Rigid_Body-1, Ref node=2118, Rot node=2119
 **
 ** Surface interactions ++++++++++++++++++++++++++++++++++++
 **
@@ -2852,7 +2833,7 @@ Solid_part-1
 **
 *Step
 *Frequency, Solver=Pardiso, Storage=Yes
-10
+15
 **
 ** Controls ++++++++++++++++++++++++++++++++++++++++++++++++
 **
@@ -2863,9 +2844,6 @@ Solid_part-1
 ** Boundary conditions +++++++++++++++++++++++++++++++++++++
 **
 *Boundary, op=New
-** Name: Fixed-1
-*Boundary
-Internal_Selection-1_Fixed-1, 1, 6, 0
 **
 ** Loads +++++++++++++++++++++++++++++++++++++++++++++++++++
 **
@@ -2875,10 +2853,6 @@ Internal_Selection-1_Fixed-1, 1, 6, 0
 **
 ** History outputs +++++++++++++++++++++++++++++++++++++++++
 **
-*Node print, Nset=Reference_Point-1_Ref_21171, Global=Yes
-U
-*Node print, Nset=Reference_Point-1_Rot_21172, Global=Yes
-U
 **
 ** Field outputs +++++++++++++++++++++++++++++++++++++++++++
 **
@@ -2889,4 +2863,15 @@ S, E, NOE
 **
 ** End step ++++++++++++++++++++++++++++++++++++++++++++++++
 **
+*End step
+*Step, Perturbation
+
+*Frequency, Solver=MatrixStorage
+
+*Output, Frequency=1
+
+*Node file
+RF,U
+*El file
+S,E,NOE
 *End step
