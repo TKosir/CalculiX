@@ -1,0 +1,361 @@
+
+                        S T E P       1
+
+
+     E I G E N V A L U E   O U T P U T
+
+ MODE NO    EIGENVALUE                       FREQUENCY   
+                                     REAL PART            IMAGINARY PART
+                           (RAD/TIME)      (CYCLES/TIME     (RAD/TIME)
+
+      1   0.1942957E+06   0.4407899E+03   0.7015389E+02   0.0000000E+00
+      2   0.3299368E+06   0.5744013E+03   0.9141880E+02   0.0000000E+00
+      3   0.3577080E+07   0.1891317E+04   0.3010124E+03   0.0000000E+00
+      4   0.4780901E+07   0.2186527E+04   0.3479966E+03   0.0000000E+00
+      5   0.6027244E+07   0.2455045E+04   0.3907325E+03   0.0000000E+00
+      6   0.3399046E+08   0.5830134E+04   0.9278946E+03   0.0000000E+00
+      7   0.3546461E+08   0.5955217E+04   0.9478022E+03   0.0000000E+00
+      8   0.4213747E+08   0.6491338E+04   0.1033129E+04   0.0000000E+00
+      9   0.4844319E+08   0.6960114E+04   0.1107737E+04   0.0000000E+00
+     10   0.1083420E+09   0.1040875E+05   0.1656603E+04   0.0000000E+00
+     11   0.1404972E+09   0.1185315E+05   0.1886488E+04   0.0000000E+00
+     12   0.2168674E+09   0.1472642E+05   0.2343782E+04   0.0000000E+00
+     13   0.2974086E+09   0.1724554E+05   0.2744713E+04   0.0000000E+00
+     14   0.3267021E+09   0.1807490E+05   0.2876710E+04   0.0000000E+00
+     15   0.4466081E+09   0.2113310E+05   0.3363438E+04   0.0000000E+00
+
+     P A R T I C I P A T I O N   F A C T O R S
+
+MODE NO.   X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+      1   0.1527854E-06  -0.2143003E-03   0.1988948E-01  -0.3910169E-04  -0.5340763E+01  -0.7495567E-01
+      2   0.3415045E-05  -0.1881190E-01  -0.5876414E-03   0.2879394E-05   0.2056062E+00  -0.5221839E+01
+      3   0.9838891E-06  -0.5855147E-03  -0.1316034E-01   0.8309950E-04   0.1366154E+01  -0.2042625E+00
+      4  -0.1714120E-04  -0.1433291E-01   0.1276233E-02  -0.1897507E-04  -0.4457863E+00  -0.1794301E+01
+      5  -0.5348371E-02   0.8723452E-07   0.1932136E-05  -0.4073667E+00  -0.1918054E-03  -0.9101987E-04
+      6   0.2155305E-03  -0.7276400E-03   0.8750997E-02   0.1058069E-02  -0.4229867E+00  -0.2558539E+00
+      7  -0.2288055E-01   0.1480230E-04   0.8504522E-04   0.5228115E-04  -0.3896807E-02  -0.1274771E-02
+      8   0.1446187E-02  -0.3371350E-05   0.2585610E-04  -0.3329086E+00  -0.1017813E-02  -0.7221844E-03
+      9  -0.2519011E-04  -0.8994541E-02  -0.1481109E-02   0.6513641E-04   0.5194420E+00  -0.4404926E+00
+     10   0.1523040E-04   0.7199661E-03   0.6187612E-02   0.1173407E-03  -0.2094081E+00   0.2520407E+00
+     11   0.3813415E-04   0.6973724E-02  -0.1182545E-02   0.2103110E-04   0.4140935E+00   0.2244932E+00
+     12   0.1221859E-01  -0.1814453E-04  -0.5191504E-05  -0.7305037E-05  -0.2667957E-03  -0.7974952E-03
+     13   0.6966263E-03  -0.2978473E-05   0.6336993E-05   0.1354618E+00  -0.1279517E-03  -0.6192467E-03
+     14  -0.9173160E-05   0.6103687E-03  -0.5259521E-02   0.2118477E-03   0.1186472E+00   0.2136535E+00
+     15  -0.7183112E-05  -0.5436920E-02  -0.7999661E-03  -0.3259518E-04   0.2801715E+00  -0.1048281E+00
+
+     E F F E C T I V E   M O D A L   M A S S
+
+MODE NO.   X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+      1   0.2334339E-13   0.4592463E-07   0.3955915E-03   0.1528942E-08   0.2852375E+02   0.5618353E-02
+      2   0.1166253E-10   0.3538877E-03   0.3453224E-06   0.8290911E-11   0.4227390E-01   0.2726760E+02
+      3   0.9680378E-12   0.3428275E-06   0.1731945E-03   0.6905526E-08   0.1866378E+01   0.4172316E-01
+      4   0.2938208E-09   0.2054322E-03   0.1628769E-05   0.3600532E-09   0.1987254E+00   0.3219517E+01
+      5   0.2860507E-04   0.7609861E-14   0.3733148E-11   0.1659476E+00   0.3678931E-07   0.8284617E-08
+      6   0.4645338E-07   0.5294599E-06   0.7657995E-04   0.1119511E-05   0.1789178E+00   0.6546119E-01
+      7   0.5235196E-03   0.2191081E-09   0.7232689E-08   0.2733318E-08   0.1518511E-04   0.1625042E-05
+      8   0.2091456E-05   0.1136600E-10   0.6685377E-09   0.1108281E+00   0.1035943E-05   0.5215503E-06
+      9   0.6345419E-09   0.8090176E-04   0.2193685E-05   0.4242752E-08   0.2698200E+00   0.1940337E+00
+     10   0.2319652E-09   0.5183512E-06   0.3828654E-04   0.1376884E-07   0.4385174E-01   0.6352452E-01
+     11   0.1454213E-08   0.4863282E-04   0.1398412E-05   0.4423071E-09   0.1714734E+00   0.5039720E-01
+     12   0.1492939E-03   0.3292241E-09   0.2695171E-10   0.5336357E-10   0.7117997E-07   0.6359985E-06
+     13   0.4852882E-06   0.8871300E-11   0.4015748E-10   0.1834991E-01   0.1637163E-07   0.3834664E-06
+     14   0.8414686E-10   0.3725500E-06   0.2766256E-04   0.4487943E-07   0.1407715E-01   0.4564783E-01
+     15   0.5159710E-10   0.2956010E-04   0.6399457E-06   0.1062446E-08   0.7849607E-01   0.1098892E-01
+TOTAL     0.7040445E-03   0.7202242E-03   0.7175292E-03   0.2951268E+00   0.3138778E+02   0.3096452E+02
+
+     T O T A L   E F F E C T I V E   M A S S
+
+MODE NO.   X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+          0.2178245E-02   0.1199045E-02   0.1743045E-02   0.3175602E+00   0.1505884E+03   0.8406911E+02
+
+
+                    E I G E N V A L U E    N U M B E R     1
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  4.472735E-04 -2.522093E-03  7.902171E+01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  4.265001E-05 -3.926255E-01 -2.964369E-06
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     2
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  1.421560E-02 -8.370265E+01 -4.333542E-03
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  1.006944E-05  4.666867E-05 -4.794733E-01
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     3
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  5.426498E-03  1.624889E-02  6.405227E+01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -8.661361E-05 -1.070531E+00  3.304969E-04
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     4
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -6.126547E-02  5.644858E+01 -9.853771E-03
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -1.402069E-04  1.158749E-04  1.039785E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     5
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -8.657224E-04 -6.127681E-04  3.025073E-02
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -3.024796E+00 -7.865379E-04  2.639090E-05
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     6
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  5.680438E-01  1.434808E-02  5.394784E+01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -1.081264E-03 -1.344635E+00  4.355442E-04
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     7
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -5.824791E+01 -4.402804E-02  5.070943E-01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -5.739529E-05 -1.257093E-02 -4.242237E-04
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     8
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -6.224278E-03 -1.392455E-02  1.352576E-01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  8.191940E-01 -3.382268E-03 -3.837610E-04
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R     9
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -5.724970E-02 -4.599577E+01  2.404896E-02
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -4.707390E-05 -5.527741E-04 -1.212608E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R    10
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  5.850220E-04  9.827536E-03 -4.657951E+01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -2.073396E-03  1.322862E+00  2.178161E-04
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R    11
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -2.690114E-02 -3.400958E+01  1.637236E-03
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  1.871953E-04 -3.399713E-06 -9.660773E-01
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R    12
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -3.217924E+01  1.820021E-02  5.764958E-02
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  6.088740E-05 -1.665276E-03  1.025088E-03
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R    13
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719 -1.870083E-03 -1.314114E-03  9.461853E-02
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  3.926923E-01 -3.087486E-03 -4.823077E-05
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R    14
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  2.983546E-02 -1.539200E-03 -3.383471E+01
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720 -1.847061E-03  1.120075E+00 -6.204960E-05
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                    E I G E N V A L U E    N U M B E R    15
+
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_REF_47181 and time  0.1000000E+01
+
+      4719  6.177068E-02 -2.138090E+01 -7.285259E-03
+
+ displacements (vx,vy,vz) for set MOTORCENTERPT_ROT_47182 and time  0.1000000E+01
+
+      4720  6.660354E-04  2.651540E-04 -6.528321E-01
+
+ displacements (vx,vy,vz) for set BC_REFPT_REF_47201 and time  0.1000000E+01
+
+      4721  0.000000E+00  0.000000E+00  0.000000E+00
+
+ displacements (vx,vy,vz) for set BC_REFPT_ROT_47202 and time  0.1000000E+01
+
+      4722  0.000000E+00  0.000000E+00  0.000000E+00
+
+                        S T E P       2
+
