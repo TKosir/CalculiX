@@ -284,7 +284,60 @@ def _read_dof_map(path: Path) -> np.ndarray:
     return np.column_stack((np.array(node_ids, dtype=np.int64), np.array(comps, dtype=np.int64), eq_ids))
 
 
-def _structure_from_inp(dof_map: np.ndarray, inp_path: Path) -> Tuple[np.ndarray, np.ndarray]:
+def _structure_from_matrix_dump(base_path: Path, ndof: int) -> Optional[List[List[int]]]:
+    """Reconstruct row-wise connectivity from CalculiX *.sti/*.mas dumps.
+
+    The *.sti (stiffness) and *.mas (mass) files written during eigenvalue
+    extraction contain the lower-triangular matrix entries as ``i j value``
+    triples using one-based indexing【F:src/arpack.c†L962-L993】.  They are the
+    authoritative definition of the sparsity pattern that is later replayed
+    when reading the *.eig restart file in a subsequent step【F:src/steadystate.c†L357-L417】.
+    Parsing these dumps is therefore more robust than attempting to infer the
+    connectivity from the original *.inp deck, especially when MPCs,
+    tie-constraints, or condensed DOFs alter the coupling pattern.
+
+    Parameters
+    ----------
+    base_path:
+        Path to the *.eig file (the function searches for sibling *.sti or
+        *.mas files sharing the same stem).
+    ndof:
+        Number of active equations (length of the diagonal blocks written to
+        the restart file).
+    """
+
+    for suffix in (".sti", ".mas"):
+        candidate = base_path.with_suffix(suffix)
+        if not candidate.exists():
+            continue
+
+        row_lists: List[List[int]] = [[] for _ in range(ndof)]
+        with candidate.open("r", encoding="utf-8", errors="ignore") as handle:
+            for line in handle:
+                parts = line.strip().split()
+                if len(parts) < 2:
+                    continue
+                try:
+                    i = int(parts[0]) - 1
+                    j = int(parts[1]) - 1
+                except ValueError:
+                    continue
+                if not (0 <= i < ndof and 0 <= j < ndof):
+                    continue
+                if i == j:
+                    continue
+                if i > j:
+                    i, j = j, i
+                    if not (0 <= i < ndof and 0 <= j < ndof):
+                        continue
+                row_lists[i].append(j)
+
+        return row_lists
+
+    return None
+
+
+def _structure_from_inp(dof_map: np.ndarray, inp_path: Path) -> List[List[int]]:
     eq_count = dof_map.shape[0]
     node_to_components: Dict[int, List[int]] = {}
     nodecomp_to_eq: Dict[Tuple[int, int], int] = {}
@@ -330,45 +383,49 @@ def _structure_from_inp(dof_map: np.ndarray, inp_path: Path) -> Tuple[np.ndarray
             continue
         i += 1
 
-    indptr = np.zeros(eq_count + 1, dtype=np.int64)
-    indices: List[int] = []
-    for idx, rows in enumerate(adjacency):
-        sorted_rows = sorted(rows)
-        indices.extend(sorted_rows)
-        indptr[idx + 1] = len(indices)
+    row_lists: List[List[int]] = [[] for _ in range(eq_count)]
+    for col in range(eq_count):
+        for row in adjacency[col]:
+            lo, hi = (row, col) if row < col else (col, row)
+            if lo == hi:
+                continue
+            row_lists[lo].append(hi)
 
-    return indptr, np.array(indices, dtype=np.int64)
+    for lst in row_lists:
+        lst.sort()
+
+    return row_lists
 
 
 def _assemble_symmetric(
     diag: np.ndarray,
     offdiag: np.ndarray,
-    indptr: np.ndarray,
-    indices: np.ndarray,
+    row_lists: List[List[int]],
 ) -> sp.csr_matrix:
     n = diag.size
-    expected = indices.size
-    if offdiag.size != expected:
+    if len(row_lists) != n:
+        raise ValueError("Row structure length mismatch")
+
+    nnz_lower = sum(len(lst) for lst in row_lists)
+    if offdiag.size != nnz_lower:
         raise ValueError(
-            f"Off-diagonal length {offdiag.size} does not match structure ({expected})"
+            f"Off-diagonal length {offdiag.size} does not match structure ({nnz_lower})"
         )
 
-    nnz = expected * 2 + n
+    nnz = n + 2 * nnz_lower
     rows = np.empty(nnz, dtype=np.int64)
     cols = np.empty_like(rows)
     data = np.empty_like(rows, dtype=diag.dtype)
 
     cursor = 0
     k = 0
-    for col in range(n):
-        rows[cursor] = col
-        cols[cursor] = col
-        data[cursor] = diag[col]
+    for row in range(n):
+        rows[cursor] = row
+        cols[cursor] = row
+        data[cursor] = diag[row]
         cursor += 1
-        start = indptr[col]
-        end = indptr[col + 1]
-        column_indices = indices[start:end]
-        for row in column_indices:
+        neighbors = row_lists[row]
+        for col in neighbors:
             val = offdiag[k]
             rows[cursor] = row
             cols[cursor] = col
@@ -419,18 +476,20 @@ def read_eig(
     mass_matrix: Optional[sp.csr_matrix] = None
     stiffness_matrix: Optional[sp.csr_matrix] = None
     matrix_meta: Dict[str, dict] = {}
-    indptr: Optional[np.ndarray] = None
-    indices: Optional[np.ndarray] = None
 
     if load_matrices:
-        inp_path = _resolve_with_override(path, ".inp", _AUX_INP_PATH)
-        if dof_map_internal is None or inp_path is None or not inp_path.exists():
-            raise FileNotFoundError(
-                "Reconstructing sparse matrices requires both .dof and .inp files"
-            )
-        indptr, indices = _structure_from_inp(dof_map_internal, inp_path)
-        stiffness_matrix = _assemble_symmetric(ad, au, indptr, indices)
-        mass_matrix = _assemble_symmetric(adb, aub, indptr, indices)
+        structure = _structure_from_matrix_dump(path, ndof)
+        if structure is None:
+            inp_path = _resolve_with_override(path, ".inp", _AUX_INP_PATH)
+            if dof_map_internal is None or inp_path is None or not inp_path.exists():
+                raise FileNotFoundError(
+                    "Reconstructing sparse matrices requires .sti/.mas or both .dof and .inp files"
+                )
+            row_lists = _structure_from_inp(dof_map_internal, inp_path)
+        else:
+            row_lists = structure
+        stiffness_matrix = _assemble_symmetric(ad, au, row_lists)
+        mass_matrix = _assemble_symmetric(adb, aub, row_lists)
         matrix_meta = {
             "stiffness": {
                 "shape": stiffness_matrix.shape,
